@@ -468,7 +468,7 @@ const AppContent: React.FC = () => {
           </div>
           <h2 className="text-2xl font-bold text-zetaloc-secondary mb-2">Chamado Aberto!</h2>
           <p className="text-gray-600 mb-6 text-sm leading-relaxed">
-            Sua solicitação para o equipamento <strong className="text-zetaloc-secondary">{formData.equipmentModel}</strong> foi enviada com sucesso e em breve nossa equipe técnica entrará em contato.
+            Sua solicitação para o equipament <strong className="text-zetaloc-secondary">{formData.equipmentModel}</strong> foi enviada com sucesso e em breve nossa equipe técnica entrará em contato.
           </p>
           <button 
             onClick={() => window.location.reload()}
