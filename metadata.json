@@ -1,0 +1,9 @@
+{
+  "name": "Zetaloc Service Portal",
+  "description": "Plataforma de abertura de chamados técnicos para locação de máquinas.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
