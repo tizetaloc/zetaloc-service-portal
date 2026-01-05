@@ -23,9 +23,12 @@ export const InputField: React.FC<InputProps> = ({ label, error, icon, className
   </div>
 );
 
+// Tipo para suportar strings simples ou objetos de grupo
+type SelectOption = string | { category: string; items: string[] };
+
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label: string;
-  options: string[];
+  options: SelectOption[];
   error?: string;
   icon?: React.ReactNode;
 }
@@ -44,11 +47,25 @@ export const SelectField: React.FC<SelectProps> = ({ label, options, error, icon
         {...props}
       >
         <option value="" disabled>Selecione uma opção...</option>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
+        {options.map((option, index) => {
+          if (typeof option === 'string') {
+            return (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            );
+          } else {
+            return (
+              <optgroup key={index} label={option.category}>
+                {option.items.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </optgroup>
+            );
+          }
+        })}
       </select>
       <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
         <ChevronDown size={16} />

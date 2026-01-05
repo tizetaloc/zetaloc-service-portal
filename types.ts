@@ -12,6 +12,7 @@ export interface FormData {
   equipmentModel: string;
   serialNumber: string;
   problemDescription: string;
+  problemType: string; // New field for problem classification
   hourMeter: string;
   location: string;
   mapsLink?: string; // New field to store the raw Google Maps URL
@@ -34,6 +35,7 @@ export interface FormErrors {
   equipmentModel?: string;
   serialNumber?: string;
   problemDescription?: string;
+  problemType?: string;
   hourMeter?: string;
   location?: string;
   responsibleName?: string;
